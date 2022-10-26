@@ -42,11 +42,10 @@ This scans an image for High/Critical CVEs. The `-f json` flag can be used to ou
 The steps above can become a bit tedious if you need to scan all images during a release. We've written a script that you can find in the infrastructure repo in the security/tooling/trivy section. You can run the script as follows:
 
 ```
-$ python3 trivy-diff.py --release 4.1.0 --threads 10 
+$ python3 trivy-diff.py --release 4.1.0 --threads 10
 ```
 
 The command above will lookup accepted vulnerabilities in the markdown table in our handbook using the `--release` parameter. It then uses 10 threads to scan the container images. It will output vulnerabilities that are not on the handbook page and that on the handbook page but not found by Trivy.
-
 
 ## Accepted vulnerabilities and false positives
 
